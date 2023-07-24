@@ -1,0 +1,45 @@
+{
+  "containers": [
+    {
+      "name": "ynrl-koa",
+      "domain": "",
+      "ip": "",
+      "containerId": "244cee07c8b792f698f80c5bf5aea2f0f6f115e1209596afa25da30ddb0af923"
+    }
+  ],
+  "config": {
+    "ynrl-koa": {
+      "containerPort": 80,
+      "dockerfilePath": "Dockerfile",
+      "buildDir": "",
+      "minNum": 0,
+      "maxNum": 5,
+      "cpu": 1,
+      "mem": 2,
+      "policyType": "cpu",
+      "policyThreshold": 80,
+      "policyDetails": [
+        {
+          "PolicyType": "cpu",
+          "PolicyThreshold": 80
+        },
+        {
+          "PolicyType": "mem",
+          "PolicyThreshold": 80
+        }
+      ],
+      "envParams": {
+        "MYSQL_USERNAME": "mactest",
+        "MYSQL_PASSWORD": "Wcjsnbb123",
+        "MYSQL_ADDRESS": "sh-cynosdbmysql-grp-98qn6nua.sql.tencentcdb.com:23983"
+      },
+      "customLogs": "stdout",
+      "initialDelaySeconds": 2,
+      "dataBaseName": "nodejs_demo",
+      "executeSQLs": [
+        "CREATE DATABASE IF NOT EXISTS nodejs_demo;",
+        "USE nodejs_demo;"
+      ]
+    }
+  }
+}
